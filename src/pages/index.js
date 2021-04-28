@@ -1,5 +1,5 @@
-import { SliderBar } from '../components/nav/SliderBar'
+import { NavBar } from '../components/nav/NavBar'
 
 export default function Home() {
-  return <SliderBar />
+  return <NavBar />
 }

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 import colors from "../../styles/colors"
 
-export function MenuItem(props) {
+export function NavBarItem(props) {
     const { icon, active, ...rest } = props
     return (
         <Item

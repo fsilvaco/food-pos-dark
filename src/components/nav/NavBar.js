@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import colors from "../../styles/colors"
 
-import { MenuItem } from "./MenuItem";
+import { NavBarItem } from "./NavBarItem";
 
 import Logo from "../../../public/logo.svg"
 import Home from "../../../public/home.svg"
@@ -12,22 +12,22 @@ import Icon4 from "../../../public/icon_4.svg"
 import Icon5 from "../../../public/icon_5.svg"
 import Icon6 from "../../../public/icon_6.svg"
 
-export function SliderBar() {
+export function NavBar() {
   return (
     <Container>
       <Wrapper>
         <LogoContainer>
           <img src={Logo} />
         </LogoContainer>
-        <MenuContainer>
-          <MenuItem icon={Home} active />
-          <MenuItem icon={Icon1} active={false} />
-          <MenuItem icon={Icon2} active={false} />
-          <MenuItem icon={Icon3} active={false} />
-          <MenuItem icon={Icon4} active={false} />
-          <MenuItem icon={Icon5} active={false} />
-        </MenuContainer>
-        <MenuItem icon={Icon6} active={false} />
+        <NavBarContainer>
+          <NavBarItem icon={Home} active />
+          <NavBarItem icon={Icon1} active={false} />
+          <NavBarItem icon={Icon2} active={false} />
+          <NavBarItem icon={Icon3} active={false} />
+          <NavBarItem icon={Icon4} active={false} />
+          <NavBarItem icon={Icon5} active={false} />
+        </NavBarContainer>
+        <NavBarItem icon={Icon6} active={false} />
       </Wrapper>
     </Container>
   );
@@ -62,7 +62,7 @@ const LogoContainer = styled.div`
     justify-content: center;
   `;
 
-const MenuContainer = styled.div`
+const NavBarContainer = styled.div`
     display: flex;
     flex: 1;
     flex-direction: column;
