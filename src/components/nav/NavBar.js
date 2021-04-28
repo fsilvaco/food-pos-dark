@@ -70,5 +70,3 @@ const NavBarContainer = styled.div`
     justify-content: space-around;
   `
   ;
-
-const Logout = styled.div``;
