@@ -30,16 +30,16 @@ const Item = styled.a`
         background-color: ${colors.primary};
         box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.32);
 
-        &:after {
-            content: "";
-            width: 85%;
-            height: 80px;
-            position: absolute;
-            right: 0px;
-            z-index: -1;
-            background-color: ${colors.dark_bg_1};
-            border-radius: 12px 0 0 12px;
-    }
+        // &:after {
+        //     content: "";
+        //     width: 85%;
+        //     height: 80px;
+        //     position: absolute;
+        //     right: 0px;
+        //     z-index: 1;
+        //     background-color: ${colors.dark_bg_1};
+        //     border-radius: 12px 0 0 12px;
+        // }
 
     `}
 

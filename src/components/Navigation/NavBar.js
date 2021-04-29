@@ -35,13 +35,11 @@ export function NavBar() {
 
 const Container = styled.div`
     display: flex;
-    flex: 1;
     justify-content: center;
-    position: fixed;
     width: 74px;
     height: 100%;
     background-color: ${colors.dark_bg_2};
-    padding: 0 30px;
+    padding: 0 20px;
   `;
 
 const Wrapper = styled.div`
@@ -67,6 +65,7 @@ const NavBarContainer = styled.div`
     flex: 1;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 60px 0;
   `
   ;
