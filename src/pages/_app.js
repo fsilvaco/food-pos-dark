@@ -1,9 +1,13 @@
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-  body {
+  *{
     margin: 0;
     padding: 0;
+  }
+  
+  body {
+    font-family: 'Barlow', sans-serif;
     box-sizing: border-box;
     height: 100vh;
   }
