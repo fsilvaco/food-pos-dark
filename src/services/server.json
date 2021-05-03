@@ -1,0 +1,21 @@
+{
+  "foods_categories": [
+    {"key": "hot_dishes", "title": "Hot Dishes"},
+    {"key": "cold_dishes", "title": "Cold Dishes"},
+    {"key": "soup", "title": "Soup"},
+    {"key": "grill", "title": "Grill"},
+    {"key": "appetizer", "title": "Appetizer"},
+    {"key": "dessert", "title": "Dessert"}
+  ],
+
+  "foods": [
+    {
+      "id": 1,
+      "name": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20,
+      "photo": "../../public/foods/1.svg",
+      "categories": ["hot_dishes", "appetizer"]
+    }
+  ]
+}
