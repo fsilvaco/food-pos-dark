@@ -48,13 +48,17 @@ const CardContainer = styled.div`
     flex-wrap: wrap;
     gap: 12px;
     overflow-y: scroll;
+
+    
+
+    &&::-webkit-scrollbar {
+        width: 1px;      
+    } 
+ 
 `
 
 const CardTitle = styled.h2`
     font-size: 28px;
     color: ${colors.white};
     margin: 20px 0;
-`
-
-const AllCardContainer = styled.div`
 `
