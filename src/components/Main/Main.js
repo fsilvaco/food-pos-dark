@@ -4,14 +4,16 @@ import { Heading } from "../Navigation/Heading"
 import { Menu } from "../Navigation/Menu"
 
 import api from "../../services/api"
+import Card from "../Card"
+import colors from "../../styles/colors"
 
 export function Main() {
-    const [food, setFood] = useState()
+    const [foods, setFoods] = useState([])
 
     async function handleFoods() {
         const {data} = await api.get("/foods")
-        setFood(data)
-        }
+        setFoods(data)
+    }
 
     useEffect(() =>{
         handleFoods()
@@ -21,13 +23,13 @@ export function Main() {
         <Container>
             <Heading />
             <Menu />
-
-            <CardContainer> 
                 <CardTitle>Choose Dishes</CardTitle>
+            <CardContainer> 
+                    {foods.map(item => (
 
-                <AllCardContainer>
-                    {/* <Card item={}  /> */}
-                </AllCardContainer>
+                        <Card food={item} />
+
+                    ))}
 
             </CardContainer>
         </Container>
@@ -42,9 +44,16 @@ const Container = styled.div`
 `
 
 const CardContainer = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    overflow-y: scroll;
 `
 
 const CardTitle = styled.h2`
+    font-size: 28px;
+    color: ${colors.white};
+    margin: 20px 0;
 `
 
 const AllCardContainer = styled.div`

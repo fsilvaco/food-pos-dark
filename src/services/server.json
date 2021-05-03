@@ -16,6 +16,46 @@
       "available": 20,
       "photo": "../../public/foods/1.svg",
       "categories": ["hot_dishes", "appetizer"]
+    },
+    {
+      "id": 2,
+      "name": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20,
+      "photo": "../../public/foods/1.svg",
+      "categories": ["hot_dishes", "appetizer"]
+    },
+    {
+      "id": 3,
+      "name": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20,
+      "photo": "../../public/foods/1.svg",
+      "categories": ["hot_dishes", "appetizer"]
+    },
+    {
+      "id": 4,
+      "name": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20,
+      "photo": "../../public/foods/1.svg",
+      "categories": ["hot_dishes", "appetizer"]
+    },
+    {
+      "id": 5,
+      "name": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20,
+      "photo": "../../public/foods/1.svg",
+      "categories": ["hot_dishes", "appetizer"]
+    },
+    {
+      "id": 6,
+      "name": "Spicy seasoned seafood noodles",
+      "price": 2.29,
+      "available": 20,
+      "photo": "../../public/foods/1.svg",
+      "categories": ["hot_dishes", "appetizer"]
     }
   ]
 }
