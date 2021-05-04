@@ -27,7 +27,9 @@ export function Main() {
                 <CardTitle>Choose Dishes</CardTitle>
             <CardContainer> 
                 {foods.map(item => (
-                    <CardPrimary food={item} />
+                    <CardPrimary 
+                        key={item.id} 
+                        food={item} />
                 ))}
             </CardContainer>
         </Container>
