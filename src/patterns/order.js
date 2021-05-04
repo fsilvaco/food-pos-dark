@@ -12,7 +12,14 @@ export function Order() {
           <Buttons active={false} title="To Go" />
           <Buttons active={false} title="Delivery" />
       </ContainerButton>
-      <CardSecondary />
+      <Table>
+        <TableItem style={{flex: 2}}>Item</TableItem>
+        <TableItem style={{flex: 1}}>Qty</TableItem>
+        <TableItem>Price</TableItem>
+      </Table>
+      <CardsContainer>
+        <CardSecondary />
+      </CardsContainer>
     </Container>
   )
 }
@@ -24,6 +31,14 @@ const Container = styled.div`
   background-color: ${colors.dark_bg_2};
   padding: 25px;
 `
+const CardsContainer = styled.div`
+  overflow-y: scroll;   
+
+  &&::-webkit-scrollbar {
+      width: 1px;      
+  }
+  
+`
 
 const OrderId = styled.h2`
   font-size: 20px;
@@ -32,4 +47,16 @@ const OrderId = styled.h2`
 
 const ContainerButton = styled.div`
   margin-top: 40px;
+`
+
+const Table = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
+  border-bottom: 1px solid ${colors.dark_line};
+  padding-bottom: 20px;
+`
+
+const TableItem = styled.p`
+  color: ${colors.white}
 `
