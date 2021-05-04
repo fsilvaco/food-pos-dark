@@ -1,18 +1,18 @@
 import styled from "styled-components";
-import colors from "../../styles/colors"
+import colors from "../styles/colors"
 
-import { NavBarItem } from "./NavBarItem";
+import { NavigationItem } from "../components/navigation/navigation-item";
 
-import Logo from "../../../public/logo.svg"
-import Home from "../../../public/home.svg"
-import Icon1 from "../../../public/icon_1.svg"
-import Icon2 from "../../../public/icon_2.svg"
-import Icon3 from "../../../public/icon_3.svg"
-import Icon4 from "../../../public/icon_4.svg"
-import Icon5 from "../../../public/icon_5.svg"
-import Icon6 from "../../../public/icon_6.svg"
+import Logo from "../../public/logo.svg"
+import Home from "../../public/home.svg"
+import Icon1 from "../../public/icon_1.svg"
+import Icon2 from "../../public/icon_2.svg"
+import Icon3 from "../../public/icon_3.svg"
+import Icon4 from "../../public/icon_4.svg"
+import Icon5 from "../../public/icon_5.svg"
+import Icon6 from "../../public/icon_6.svg"
 
-export function NavBar() {
+export function NavigationLeft() {
   return (
     <Container>
       <Wrapper>
@@ -20,14 +20,14 @@ export function NavBar() {
           <img src={Logo} />
         </LogoContainer>
         <NavBarContainer>
-          <NavBarItem icon={Home} active />
-          <NavBarItem icon={Icon1} active={false} />
-          <NavBarItem icon={Icon2} active={false} />
-          <NavBarItem icon={Icon3} active={false} />
-          <NavBarItem icon={Icon4} active={false} />
-          <NavBarItem icon={Icon5} active={false} />
+          <NavigationItem icon={Home} active />
+          <NavigationItem icon={Icon1} active={false} />
+          <NavigationItem icon={Icon2} active={false} />
+          <NavigationItem icon={Icon3} active={false} />
+          <NavigationItem icon={Icon4} active={false} />
+          <NavigationItem icon={Icon5} active={false} />
         </NavBarContainer>
-        <NavBarItem icon={Icon6} active={false} />
+        <NavigationItem icon={Icon6} active={false} />
       </Wrapper>
     </Container>
   );

@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
 import styled from "styled-components"
-import { Heading } from "../Navigation/Heading"
-import { Menu } from "../Navigation/Menu"
 
-import api from "../../services/api"
-import Card from "../Card"
-import colors from "../../styles/colors"
+import { Heading } from "../components/header/heading"
+import { Menu } from "../components/navigation/menu"
+import {CardPrimary} from "../components/card/card-primary"
+
+import colors from "../styles/colors"
+import api from "../services/api"
 
 export function Main() {
     const [foods, setFoods] = useState([])
@@ -25,12 +26,9 @@ export function Main() {
             <Menu />
                 <CardTitle>Choose Dishes</CardTitle>
             <CardContainer> 
-                    {foods.map(item => (
-
-                        <Card food={item} />
-
-                    ))}
-
+                {foods.map(item => (
+                    <CardPrimary food={item} />
+                ))}
             </CardContainer>
         </Container>
     )

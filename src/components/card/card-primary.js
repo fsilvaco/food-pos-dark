@@ -1,8 +1,8 @@
 import styled from "styled-components"
-import colors from "../styles/colors"
-import photo from "../../public/foods/1.svg"
+import colors from "../../styles/colors"
+import photo from "../../../public/foods/1.svg"
 
-export default function Card(props) {
+export function CardPrimary(props) {
   return (
     <Container>
       <ImageCard src={photo}/>

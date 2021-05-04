@@ -1,16 +1,16 @@
 import styled from "styled-components"
 import colors from "../styles/colors"
-import { Label } from "./Label"
+import { Buttons } from "../components/button"
 
-export function Orders() {
+export function Order() {
   return (
     <Container>
       <OrderId>Orders #34562</OrderId>
-      <ContainerLabel>
-          <Label active title="Dine In" />
-          <Label active={false} title="To Go" />
-          <Label active={false} title="Delivery" />
-      </ContainerLabel>
+      <ContainerButton>
+          <Buttons active title="Dine In" />
+          <Buttons active={false} title="To Go" />
+          <Buttons active={false} title="Delivery" />
+      </ContainerButton>
     </Container>
   )
 }
@@ -28,6 +28,6 @@ const OrderId = styled.h2`
   color: ${colors.white};
 `
 
-const ContainerLabel = styled.div`
+const ContainerButton = styled.div`
   margin-top: 40px;
 `

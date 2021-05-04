@@ -1,14 +1,14 @@
-import Grid from '../components/Layout/Grid'
-import { Main } from '../components/Main/Main'
-import { NavBar } from '../components/Navigation/NavBar'
-import { Orders } from '../components/Orders'
+import Grid from '../components/layout/grid'
+import { Main } from '../patterns/main'
+import { NavigationLeft } from '../patterns/navigation-left'
+import { Order } from '../patterns/order'
 
 export default function Home() {
   return (
     <Grid>
-      <NavBar />
+      <NavigationLeft />
       <Main />
-      <Orders />
+      <Order />
     </Grid>
   )
 }
