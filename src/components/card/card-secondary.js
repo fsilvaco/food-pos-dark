@@ -6,7 +6,7 @@ export function CardSecondary() {
   return ( 
     <Fragment>
       {orders.map(order => (
-        <p key={order.id}>{order.id}</p>
+        <p style={{color: "#fff"}} key={order.id}>{order.name}</p>
       ))}
     </Fragment>
   )

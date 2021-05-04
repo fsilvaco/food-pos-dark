@@ -1,7 +1,7 @@
 import { useState } from "react"
 import styled from "styled-components"
 import colors from "../../styles/colors"
-import photo from "../../../public/foods/1.svg"
+import photo from "../../../public/foods/images.png"
 
 import {useOrdersFood} from "../../context/orders"
 
