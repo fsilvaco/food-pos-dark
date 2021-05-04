@@ -20,6 +20,19 @@ export function Order() {
       <CardsContainer>
         <CardSecondary />
       </CardsContainer>
+
+      <TotalContainer>
+        <TotalItem>
+          <TotalItemTitle>Discount</TotalItemTitle>
+          <TotalItemValue>$ 0</TotalItemValue>
+        </TotalItem>
+        <TotalItem>
+          <TotalItemTitle>Sub total</TotalItemTitle>
+          <TotalItemValue>$ 0</TotalItemValue>
+        </TotalItem>
+        <Buttons fluid active title="Continue to Payment"/>
+      </TotalContainer>
+
     </Container>
   )
 }
@@ -32,6 +45,7 @@ const Container = styled.div`
   padding: 25px;
 `
 const CardsContainer = styled.div`
+  flex: 1;
   overflow-y: scroll;   
 
   &&::-webkit-scrollbar {
@@ -58,5 +72,28 @@ const Table = styled.div`
 `
 
 const TableItem = styled.p`
-  color: ${colors.white}
+  color: ${colors.white};
 `
+
+const TotalContainer = styled.div`
+  border-top: 1px solid ${colors.dark_line};
+  padding-top: 30px;
+`
+
+const TotalItem = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+`
+
+const TotalItemTitle = styled.p`
+  color: ${colors.light};
+  font-size: 16px;
+`
+const TotalItemValue = styled.p`
+  color: ${colors.white};
+  font-size: 16px;
+  font-weight: 500;
+`
+

@@ -2,11 +2,12 @@ import styled from "styled-components"
 import colors from "../../styles/colors"
 
 export function Buttons(props) {
-  const {title, active} = props
+  const {title, fluid, active} = props
 
   return (
     <Button 
       isActive={active}
+      isFluid={fluid}
     >
       {title}
     </Button>
@@ -22,5 +23,13 @@ const Button = styled.button`
   border-radius: 8px;
   color: ${props => props.isActive ? (`${colors.white}`) : (`${colors.primary}`)};
   font-size: 14px;
+
+  ${props => props.isFluid && (`
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 10px;
+    box-shadow: 0px 8px 24px rgba(234, 124, 105, 0.3);
+  `)}
+
 
 `

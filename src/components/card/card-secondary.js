@@ -119,6 +119,8 @@ const OrderNote = styled.input`
   border: none;
   border: 1px solid ${colors.dark_line};
   padding-left: 10px;
+  color: ${colors.white};
+
 `
 
 const RemoveButton = styled.button`

@@ -16,7 +16,7 @@ export function CardPrimary(props) {
     <Container onClick={() => saveOrderFood(props.food)}>
       <ImageCard src={photo}/>
       <TitleCard>{props.food.name}</TitleCard>
-      <PriceCard>{props.food.price}</PriceCard>
+      <PriceCard>$ {props.food.price}</PriceCard>
       <AvailableCard>{props.food.available} available</AvailableCard>
     </Container>
   )
