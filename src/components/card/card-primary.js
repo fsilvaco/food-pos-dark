@@ -1,10 +1,19 @@
+import { useState } from "react"
 import styled from "styled-components"
 import colors from "../../styles/colors"
 import photo from "../../../public/foods/1.svg"
 
+import {useOrdersFood} from "../../context/orders"
+
 export function CardPrimary(props) {
+  const { orders, setOrders } = useOrdersFood()
+
+  function saveOrderFood(food) {
+    setOrders([...orders, food])
+  }
+
   return (
-    <Container>
+    <Container onClick={() => saveOrderFood(props.food)}>
       <ImageCard src={photo}/>
       <TitleCard>{props.food.name}</TitleCard>
       <PriceCard>{props.food.price}</PriceCard>
@@ -13,7 +22,7 @@ export function CardPrimary(props) {
   )
 }
 
-const Container = styled.div`
+const Container = styled.a`
   flex-grow: 1;
 	width: 25%;
   background-color: #1F1D2B;

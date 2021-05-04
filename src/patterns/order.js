@@ -1,6 +1,7 @@
 import styled from "styled-components"
 import colors from "../styles/colors"
 import { Buttons } from "../components/button"
+import { CardSecondary } from "../components/card/card-secondary"
 
 export function Order() {
   return (
@@ -11,6 +12,7 @@ export function Order() {
           <Buttons active={false} title="To Go" />
           <Buttons active={false} title="Delivery" />
       </ContainerButton>
+      <CardSecondary />
     </Container>
   )
 }
