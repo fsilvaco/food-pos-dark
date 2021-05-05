@@ -3,12 +3,14 @@ import colors from "../styles/colors"
 import { Buttons } from "../components/button"
 import { CardSecondary } from "../components/card/card-secondary"
 import { useOrdersFood } from "../context/orders"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 export function Order() {
 
   const {orders} = useOrdersFood()
   const [total, setTotal] = useState(0);
+
+  const cardSecondaryEndRef = useRef(null);
 
   function handleTotalPrice() {
     if(orders.length >= 2) {
@@ -19,8 +21,13 @@ export function Order() {
     }
   }
 
+  function scrollToBottom(){
+    cardSecondaryEndRef.current.scrollIntoView({ behavior: "smooth" });
+  }
+
   useEffect(()=> {
     handleTotalPrice();
+    scrollToBottom();
   }, [orders])
 
   return (
@@ -38,6 +45,7 @@ export function Order() {
       </Table>
       <CardsContainer>
         <CardSecondary />
+        <div ref={cardSecondaryEndRef}></div>
       </CardsContainer>
 
       <TotalContainer>
