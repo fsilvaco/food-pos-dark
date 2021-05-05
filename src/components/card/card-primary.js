@@ -1,15 +1,32 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import styled from "styled-components"
 import colors from "../../styles/colors"
 import photo from "../../../public/foods/images.png"
 
-import {useOrdersFood} from "../../context/orders"
+import {useOrdersFood, useQtyFood} from "../../context/orders"
 
 export function CardPrimary(props) {
-  const { orders, setOrders } = useOrdersFood()
+
+  const value = props.food.available
+
+  const { orders, setOrders } = useOrdersFood();
+
+  const [available, setAvailable] = useState(value);
 
   function saveOrderFood(food) {
-    setOrders([...orders, food])
+
+    const isDuplicate = orders.some(order => order === food)
+
+    if(!isDuplicate) {
+      setOrders([...orders, food])
+      setAvailable(available -1)
+  
+      if(available <= 1) {
+        alert("Acabou!")
+        setAvailable(0)
+      }
+    }
+
   }
 
   return (
@@ -17,7 +34,7 @@ export function CardPrimary(props) {
       <ImageCard src={photo}/>
       <TitleCard>{props.food.name}</TitleCard>
       <PriceCard>$ {props.food.price}</PriceCard>
-      <AvailableCard>{props.food.available} available</AvailableCard>
+      <AvailableCard>{available} available</AvailableCard>
     </Container>
   )
 }
