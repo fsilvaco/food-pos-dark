@@ -1,4 +1,4 @@
-import { Fragment } from "react"
+import { Fragment, useEffect, useState } from "react"
 import { useOrdersFood } from "../../context/orders"
 
 import photo from "../../../public/foods/images.png"
@@ -8,7 +8,16 @@ import colors from "../../styles/colors"
 import trash from "../../../public/trash.svg"
 
 export function CardSecondary() {
-  const { orders } = useOrdersFood()
+  const { orders, setOrders } = useOrdersFood()
+  const [qty, setQty] = useState(1);
+
+  function removeFood(id){
+    const newObjt = orders.filter(order => {
+      return order.id !== id
+    })
+    setOrders(newObjt);
+  }
+
   return ( 
     <Fragment>
       {orders.map(order => (
@@ -24,7 +33,7 @@ export function CardSecondary() {
             </CardInfo>
 
             <CardQty style={{flex: 1}}>
-              <InputQty value={1}/>
+              <InputQty value={qty}/>
             </CardQty>
 
             <CardTotalPrice>
@@ -37,7 +46,9 @@ export function CardSecondary() {
               <OrderNote placeholder={"Order Note..."}/>
             </div>
             <div>
-              <RemoveButton>
+              <RemoveButton
+                onClick={()=> removeFood(order.id)}
+              >
                 <img src={trash} />
               </RemoveButton>
             </div>

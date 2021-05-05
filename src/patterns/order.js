@@ -13,11 +13,13 @@ export function Order() {
   const cardSecondaryEndRef = useRef(null);
 
   function handleTotalPrice() {
-    if(orders.length >= 2) {
+    if(orders.length >= 1) {
       const value = orders.reduce(function(total, order){
         return total + order.price;
       }, 0);
       setTotal(value.toFixed(2));
+    } if (orders.length === 0) {
+      setTotal(0)
     }
   }
 
