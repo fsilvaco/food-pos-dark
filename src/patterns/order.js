@@ -2,8 +2,27 @@ import styled from "styled-components"
 import colors from "../styles/colors"
 import { Buttons } from "../components/button"
 import { CardSecondary } from "../components/card/card-secondary"
+import { useOrdersFood } from "../context/orders"
+import { useEffect, useState } from "react"
 
 export function Order() {
+
+  const {orders} = useOrdersFood()
+  const [total, setTotal] = useState(0);
+
+  function handleTotalPrice() {
+    if(orders.length >= 2) {
+      const value = orders.reduce(function(total, order){
+        return total + order.price;
+      }, 0);
+      setTotal(value.toFixed(2));
+    }
+  }
+
+  useEffect(()=> {
+    handleTotalPrice();
+  }, [orders])
+
   return (
     <Container>
       <OrderId>Orders #34562</OrderId>
@@ -28,9 +47,12 @@ export function Order() {
         </TotalItem>
         <TotalItem>
           <TotalItemTitle>Sub total</TotalItemTitle>
-          <TotalItemValue>$ 0</TotalItemValue>
+          <TotalItemValue>$ {total}</TotalItemValue>
         </TotalItem>
-        <Buttons fluid active title="Continue to Payment"/>
+        <Buttons
+          fluid 
+          active 
+          title="Continue to Payment"/>
       </TotalContainer>
 
     </Container>

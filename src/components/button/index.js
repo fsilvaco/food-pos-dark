@@ -2,12 +2,13 @@ import styled from "styled-components"
 import colors from "../../styles/colors"
 
 export function Buttons(props) {
-  const {title, fluid, active} = props
+  const {title, fluid, active, ...rest} = props
 
   return (
     <Button 
       isActive={active}
       isFluid={fluid}
+      {...rest}
     >
       {title}
     </Button>
